@@ -9,7 +9,6 @@ const bodyBackColor = "#1F1F1F";
 const bodyFontColor = "#FFFFFF";
 const bodyFont = "15px Segoe UI";
 const canvasBorderRadius = 0;
-const canvasBackColor = "#FFFFFF";
 const canvasPosition = "fixed";
 const audioVisibility = "hidden";
 const msgPad = 15;
@@ -57,6 +56,10 @@ const hpBarWidth = 100;
 const bgmPath = "resources/music_bgm.mp3";
 const jumpPath = "resources/music_jump.mp3";
 const attackPath = "resources/music_attack.wav";
+
+// Background
+const backgroundPath = "resources/Background2.png";
+const backgroundZIndex = 1.5;
 
 // Control
 const controlPadding = 10;

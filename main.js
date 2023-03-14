@@ -16,7 +16,7 @@ var message;
 
 // Images
 const images = [];
-const backgroundImg = newImg("resources/Background2.png");
+const backgroundImg = newImg(backgroundPath);
 
 window.onload = function () {
 	window.onkeydown = keyDown;
@@ -26,7 +26,9 @@ window.onload = function () {
 	window.onmousedown = touchStart;
 	window.onmouseup = touchEnd;
 	window.onresize = updateCanvasLocation;
-	window.onblur = function() { if (gState < 2) pause(); };
+	window.onblur = function() {
+		if (gState < 2) pause();
+	};
 	
 	initDocument();
 	initGame();
@@ -49,10 +51,10 @@ function initDocument () {
 	
 	// Prepare canvas
 	canvas = document.getElementById("myCanvas");
-	canvas.width = window.innerWidth;
-	canvas.height = window.innerHeight;
 	canvas.style.position = canvasPosition;
 	canvas.style.borderRadius = canvasBorderRadius;
+	canvas.width = window.innerWidth;
+	canvas.height = window.innerHeight;
 	updateCanvasLocation();
 	context = canvas.getContext("2d");
 	
@@ -104,7 +106,7 @@ function initLevel () {
 	leftBound -= canvas.width;
 	for (var i = leftBound; i < rightBound; i += backgroundImg.width) {
 		for (var j = topBound; j < bottomBound; j += backgroundImg.height) {
-			backgrounds.push(new Background(i, j, backgroundImg));
+			backgrounds.push(new Background(backgroundImg, i, j, backgroundZIndex));
 		}
 	}
 	
@@ -202,13 +204,14 @@ function timerTick () {
 	// Invalidate
 	context.clearRect(0, 0, canvas.width, canvas.height);
 	
-	pX = playerX = canvas.width / 2;
-	pY = playerY = canvas.height / 2;
+	padX = padY = 0;
+	playerX = canvas.width / 2;
+	playerY = canvas.height / 2;
 	
 	// Draw background
 	for (i = 0; i < backgrounds.length; i++) {
-		var backgroundX = pX + (backgrounds[i].X - playerX / 1.5) * scaling;
-		var backgroundY = pY + (backgrounds[i].Y - playerY / 1.5) * scaling;
+		var backgroundX = padX + (backgrounds[i].X - playerX / 1.5) * scaling;
+		var backgroundY = padY + (backgrounds[i].Y - playerY / 1.5) * scaling;
 		var backgroundWidth = (backgrounds[i].Image.width + 10) * scaling;
 		var backgroundHeight = (backgrounds[i].Image.height + 10) * scaling;
 		drawImage(backgrounds[i].Image, backgroundX, backgroundY, backgroundWidth, backgroundHeight);
