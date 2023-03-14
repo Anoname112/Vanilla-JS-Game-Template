@@ -104,7 +104,7 @@ function initLevel () {
 	leftBound -= canvas.width;
 	for (var i = leftBound; i < rightBound; i += backgroundImg.width) {
 		for (var j = topBound; j < bottomBound; j += backgroundImg.height) {
-			backgrounds.push(new Background(i, j));
+			backgrounds.push(new Background(i, j, backgroundImg));
 		}
 	}
 	
@@ -209,9 +209,9 @@ function timerTick () {
 	for (i = 0; i < backgrounds.length; i++) {
 		var backgroundX = pX + (backgrounds[i].X - playerX / 1.5) * scaling;
 		var backgroundY = pY + (backgrounds[i].Y - playerY / 1.5) * scaling;
-		var backgroundWidth = (backgroundImg.width + 10) * scaling;
-		var backgroundHeight = (backgroundImg.height + 10) * scaling;
-		drawImage(backgroundImg, backgroundX, backgroundY, backgroundWidth, backgroundHeight);
+		var backgroundWidth = (backgrounds[i].Image.width + 10) * scaling;
+		var backgroundHeight = (backgrounds[i].Image.height + 10) * scaling;
+		drawImage(backgrounds[i].Image, backgroundX, backgroundY, backgroundWidth, backgroundHeight);
 	}
 	
 	// Draw objects
