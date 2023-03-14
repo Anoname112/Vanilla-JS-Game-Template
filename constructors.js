@@ -1,8 +1,8 @@
 function Background (image, x, y, z) {
+	this.Image = image;
 	this.X = x;
 	this.Y = y;
 	this.Z = (z == null) ? backgroundZIndex : z;
-	this.Image = image;
 }
 
 function Vec2 (x, y) {
