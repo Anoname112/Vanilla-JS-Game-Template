@@ -5,17 +5,35 @@ const interval = 15;
 const scaling = 1.5;
 const gravity = 10;
 
+// Body
 const bodyBackColor = "#1F1F1F";
 const bodyFontColor = "#FFFFFF";
 const bodyFont = "15px Segoe UI";
+
+// Canvas
 const canvasBorderRadius = 0;
 const canvasPosition = "fixed";
-const audioVisibility = "hidden";
+
+// Message
 const msgPad = 15;
 const msgFontColor = "#000";
 const msgFontSize = 15 * scaling;
 const msgSpacing = (isMobile || isPortrait) ? 5 + scaling * 5 : 4 + scaling * 6;
 const msgFont = msgFontSize + "px Consolas";
+
+// Control
+const controlPadding = 10;
+const controlSize = 80;
+
+// Sound
+const audioVisibility = "hidden";
+const bgmPath = "resources/music_bgm.mp3";
+
+// Background
+const backgroundPath = "resources/Background2.png";
+const backgroundZIndex = 1.5;
+
+
 
 /*
 // Animation
@@ -51,16 +69,3 @@ const hpBarWidth = 100;
 //const hpBarYellow = "#FFFF00";
 //const hpBarRed = "#FF0000";
 */
-
-// Sound
-const bgmPath = "resources/music_bgm.mp3";
-const jumpPath = "resources/music_jump.mp3";
-const attackPath = "resources/music_attack.wav";
-
-// Background
-const backgroundPath = "resources/Background2.png";
-const backgroundZIndex = 1.5;
-
-// Control
-const controlPadding = 10;
-const controlSize = 80;
