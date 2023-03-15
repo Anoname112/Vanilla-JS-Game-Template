@@ -1,7 +1,6 @@
-function Background (image, x, y, z) {
+function Background (image, position, z) {
 	this.Image = image;
-	this.X = x;
-	this.Y = y;
+	this.Position = position;
 	this.Z = (z == null) ? backgroundZIndex : z;
 }
 
