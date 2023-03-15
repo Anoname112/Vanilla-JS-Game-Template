@@ -48,7 +48,7 @@ function LifeBeing (health, attack, range, attackDelay, missileSpeed, missileIma
 	this.MaxStep = stepCounter;
 	this.WalkImages = walkImages;
 	this.AttackImages = attackImages;
-	this.Image = this.walkImages[0];
+	this.Image = this.WalkImages[0];
 	this.Party = party;
 	this.Position = position;
 	this.Rotation = rotation;
@@ -66,17 +66,17 @@ LifeBeing.Mochi = function (party, position, rotation) {
 	party = (party == null) ? 1 : party;
 	position = (position == null) ? Vec2.Zero() : position;
 	rotation = (rotation == null) ? 0 : rotation;
-	var health = mochiHealth;
-	var attack = mochiAttack;
-	var range = mochiRange;
-	var attackDelay = mochiAttackDelay;
-	var missileSpeed = mochiMissileSpeed;
-	var missileImage = fireBallImg;
-	var sightRange = mochiSightRange;
-	var speed = mochiSpeed;
-	var stepCounter = mochiStepCounter;
-	var walkImages = [mochiWalkImg1, mochiWalkImg2];
-	var attackImages = [mochiAttackImg1, mochiAttackImg2, mochiAttackImg3];
+	var health = 100;
+	var attack = 5;
+	var range = 200;
+	var attackDelay = 30;
+	var missileSpeed = 8;
+	var missileImage = null;
+	var sightRange = 250;
+	var speed = 4;
+	var stepCounter = 15;
+	var walkImages = [null, null];
+	var attackImages = [null, null, null];
 	return new LifeBeing(health, attack, range, attackDelay, missileSpeed, missileImage, sightRange, speed, stepCounter, walkImages, attackImages, party, position, rotation);
 }
 
@@ -84,17 +84,17 @@ LifeBeing.WhiteZombie = function (party, position, rotation) {
 	party = (party == null) ? 0 : party;
 	position = (position == null) ? Vec2.Zero() : position;
 	rotation = (rotation == null) ? 0 : rotation;
-	var health = whiteZombieHealth;
-	var attack = whiteZombieAttack;
-	var range = whiteZombieRange;
-	var attackDelay = whiteZombieAttackDelay;
-	var missileSpeed = whiteZombieMissileSpeed;
-	var missileImage = scratchImg;
-	var sightRange = whiteZombieSightRange;
-	var speed = whiteZombieSpeed;
-	var stepCounter = whiteZombieStepCounter;
-	var walkImages = [whiteZombieImg];
-	var attackImages = [whiteZombieImg];
+	var health = 50;
+	var attack = 2;
+	var range = 40;
+	var attackDelay = 30;
+	var missileSpeed = 30;
+	var missileImage = null;
+	var sightRange = 250;
+	var speed = 2;
+	var stepCounter = 15;
+	var walkImages = [null];
+	var attackImages = [null];
 	return new LifeBeing(health, attack, range, attackDelay, missileSpeed, missileImage, sightRange, speed, stepCounter, walkImages, attackImages, party, position, rotation);
 }
 
@@ -102,17 +102,17 @@ LifeBeing.Tower = function (party, position, rotation) {
 	party = (party == null) ? 0 : party;
 	position = (position == null) ? Vec2.Zero() : position;
 	rotation = (rotation == null) ? 0 : rotation;
-	var health = towerHealth;
-	var attack = towerAttack;
-	var range = towerRange;
-	var attackDelay = towerAttackDelay;
-	var missileSpeed = towerMissileSpeed;
-	var missileImage = bulletImg;
-	var sightRange = towerSightRange;
-	var speed = towerSpeed;
-	var stepCounter = towerStepCounter;
-	var walkImages = [towerImg];
-	var attackImages = [towerImg];
+	var health = 600;
+	var attack = 10;
+	var range = 300;
+	var attackDelay = 30;
+	var missileSpeed = 8;
+	var missileImage = null;
+	var sightRange = 300;
+	var speed = 0;
+	var stepCounter = 15;
+	var walkImages = [null];
+	var attackImages = [null];
 	return new LifeBeing(health, attack, range, attackDelay, missileSpeed, missileImage, sightRange, speed, stepCounter, walkImages, attackImages, party, position, rotation);
 }
 

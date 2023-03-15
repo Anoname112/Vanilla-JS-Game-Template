@@ -4,7 +4,7 @@ const isPortrait = window.innerWidth < window.innerHeight;
 const interval = 15;
 const scaling = 1.5;
 const gravity = 10;
-const up = new Vec2(0, -1);
+const upVec2 = new Vec2(0, -1);
 
 // Body
 const bodyBackColor = "#1F1F1F";
