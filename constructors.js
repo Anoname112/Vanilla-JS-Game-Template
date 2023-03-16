@@ -45,8 +45,8 @@ LifeBeing.Mochi = function (party, position, rotation) {
 	var sightRange = 250;
 	var speed = 4;
 	var stepCounter = 15;
-	var walkImages = [null, null];
-	var attackImages = [null, null, null];
+	var walkImages = [mochiWalkImg1, mochiWalkImg2];
+	var attackImages = [mochiAttackImg1, mochiAttackImg2, mochiAttackImg3];
 	return new LifeBeing(health, attack, range, attackDelay, missileSpeed, missileImage, sightRange, speed, stepCounter, walkImages, attackImages, party, position, rotation);
 }
 

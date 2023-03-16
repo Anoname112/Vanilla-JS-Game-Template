@@ -5,6 +5,7 @@ var bgm;
 var hidden;
 
 var backgrounds;
+var player;
 
 // 0. Paused
 // 1. Playing
@@ -13,10 +14,6 @@ var backgrounds;
 var gState;
 var level;
 var message;
-
-// Images
-const images = [];
-const backgroundImg = newImg(backgroundPath);
 
 window.onload = function () {
 	window.onkeydown = keyDown;
@@ -110,6 +107,9 @@ function initLevel () {
 		}
 	}
 	
+	// Init player
+	player = new LifeBeing.Mochi(1, new Vec2(canvas.width / 2, canvas.height / 2), 0);
+	
 	if (level == 1) gState = 0;
 	else gState = 1;
 }
@@ -199,29 +199,29 @@ function keyUp (e) {
 function timerTick () {
 	if (gState == 1) {
 		// Animate
+		
 	}
 	
 	// Invalidate
 	context.clearRect(0, 0, canvas.width, canvas.height);
 	
 	padX = padY = 0;
-	playerX = canvas.width / 2;
-	playerY = canvas.height / 2;
 	
 	// Draw background
 	for (i = 0; i < backgrounds.length; i++) {
-		var backgroundX = padX + (backgrounds[i].Position.X - playerX / 1.5) * scaling;
-		var backgroundY = padY + (backgrounds[i].Position.Y - playerY / 1.5) * scaling;
+		var backgroundX = padX + (backgrounds[i].Position.X - player.Position.X / 1.5) * scaling;
+		var backgroundY = padY + (backgrounds[i].Position.Y - player.Position.Y / 1.5) * scaling;
 		var backgroundWidth = (backgrounds[i].Image.width + 10) * scaling;
 		var backgroundHeight = (backgrounds[i].Image.height + 10) * scaling;
 		drawImage(backgrounds[i].Image, backgroundX, backgroundY, backgroundWidth, backgroundHeight);
 	}
 	
-	// Draw objects
+	// Draw items
 	
 	// Draw enemies
 	
 	// Draw player
+	drawLifeBeing(player.Image, player.Position, player.Rotation++);
 	
 	// Draw platforms
 	
@@ -230,6 +230,8 @@ function timerTick () {
 	// Draw enemies HP bar
 	
 	// Draw player HP bar
+	
+	// Draw projectiles
 	
 	// Draw messages
 }

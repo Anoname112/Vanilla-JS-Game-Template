@@ -30,10 +30,22 @@ function newImg (path) {
 	return tempImg;
 }
 
-function drawImage (img, x, y, w, h) {
-	w = (w == null) ? img.width : w;
-	h = (h == null) ? img.height : h;
-	context.drawImage(img, x, y, w, h);
+function drawImage (image, x, y, w, h) {
+	w = (w == null) ? image.width : w;
+	h = (h == null) ? image.height : h;
+	context.drawImage(image, x, y, w, h);
+}
+
+function drawLifeBeing(image, position, rotation) {
+	var centerX = position.X + image.width / 2;
+	var centerY = position.Y + image.height / 2;
+	
+	context.save();
+	context.translate(centerX, centerY);
+	context.rotate(degreeToRadian(rotation));
+	context.translate(-centerX, -centerY);
+	drawImage(image, position.X, position.Y);
+	context.restore();
 }
 
 function fillRect (x, y, w, h, s) {

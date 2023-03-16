@@ -31,8 +31,16 @@ const audioVisibility = "hidden";
 const bgmPath = "resources/music_bgm.mp3";
 
 // Background
-const backgroundPath = "resources/Background2.png";
 const backgroundZIndex = 1.5;
+
+// Images
+const images = [];
+const backgroundImg = newImg("resources/Background2.png");
+const mochiWalkImg1 = newImg("resources/playerWalk1.png");
+const mochiWalkImg2 = newImg("resources/playerWalk2.png");
+const mochiAttackImg1 = newImg("resources/playerAttack1.png");
+const mochiAttackImg2 = newImg("resources/playerAttack2.png");
+const mochiAttackImg3 = newImg("resources/playerAttack3.png");
 
 /*
 // Animation
