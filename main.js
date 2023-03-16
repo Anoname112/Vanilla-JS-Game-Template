@@ -108,7 +108,8 @@ function initLevel () {
 	}
 	
 	// Init player
-	player = new LifeBeing.Mochi(1, new Vec2(canvas.width / 2, canvas.height / 2), 0);
+	player = new LifeBeing.Mochi;
+	player.Position = new Vec2((canvas.width - player.Image.width) / 2, (canvas.height - player.Image.height) / 2);
 	
 	if (level == 1) gState = 0;
 	else gState = 1;
