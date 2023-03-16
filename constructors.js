@@ -4,36 +4,6 @@ function Background (image, position, z) {
 	this.Z = (z == null) ? backgroundZIndex : z;
 }
 
-function Vec2 (x, y) {
-	this.X = x;
-	this.Y = y;
-}
-
-Vec2.prototype.length = function () {
-	return Math.sqrt(this.X * this.X + this.Y * this.Y);
-};
-
-Vec2.prototype.normalize = function () {
-	var length = this.length();
-	return new Vec2(this.X / length, this.Y / length);
-};
-
-Vec2.prototype.add = function (vec) {
-	return new Vec2(this.X + vec.X, this.Y + vec.Y);
-};
-
-Vec2.prototype.subtract = function (vec) {
-	return new Vec2(this.X - vec.X, this.Y - vec.Y);
-};
-
-Vec2.prototype.scale = function (scale) {
-	return new Vec2(this.X * scale, this.Y * scale);
-};
-
-Vec2.Zero = function () {
-	return new Vec2(0, 0);
-}
-
 function LifeBeing (health, attack, range, attackDelay, missileSpeed, missileImage, sightRange, speed, stepCounter, walkImages, attackImages, party, position, rotation) {
 	this.CurHealth = this.MaxHealth = health;
 	this.Attack = attack;
@@ -124,4 +94,53 @@ function Projectile (target, attack, speed, image, position, rotation) {
 	this.Image = image;
 	this.Position = position;
 	this.Rotation = rotation;
+}
+
+function Vec2 (x, y) {
+	this.X = x;
+	this.Y = y;
+}
+
+Vec2.prototype.length = function () {
+	return Math.sqrt(this.X * this.X + this.Y * this.Y);
+};
+
+Vec2.prototype.normalize = function () {
+	var length = this.length();
+	return new Vec2(this.X / length, this.Y / length);
+};
+
+Vec2.prototype.add = function (vec) {
+	return new Vec2(this.X + vec.X, this.Y + vec.Y);
+};
+
+Vec2.prototype.subtract = function (vec) {
+	return new Vec2(this.X - vec.X, this.Y - vec.Y);
+};
+
+Vec2.prototype.scale = function (scale) {
+	return new Vec2(this.X * scale, this.Y * scale);
+};
+
+Vec2.Zero = function () {
+	return new Vec2(0, 0);
+}
+
+function Vec3 (x, y, z) {
+	this.X = x;
+	this.Y = y;
+	this.Z = z;
+}
+
+Vec3.prototype.length = function () {
+	return Math.sqrt(this.X * this.X + this.Y * this.Y + this.Z * this.Z);
+}
+
+Vec3.prototype.normalize = function () {
+	var length = this.length();
+	return new Vec3(this.X / length, this.Y / length, this.Z / length);
+};
+
+Vec3.Zero = function () {
+	return new Vec3(0, 0, 0);
 }
