@@ -86,7 +86,7 @@ function clamp (value, min, max) {
 }
 
 function getCenter (object) {
-	return object.Image ? new Vec2(object.Position.X + object.Image.Width / 2, object.Position.Y + object.Image.Height / 2) : object.Position;
+	return object.Image ? new Vec2(object.Position.X + object.Image.width / 2, object.Position.Y + object.Image.height / 2) : object.Position;
 }
 
 function computeDot (left, right) {
