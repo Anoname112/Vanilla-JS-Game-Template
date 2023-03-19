@@ -1,5 +1,5 @@
 var canvas;
-var context;
+var ctx;
 var fireSvg;
 var bgm;
 var hidden;
@@ -53,7 +53,7 @@ function initDocument () {
 	canvas.width = window.innerWidth;
 	canvas.height = window.innerHeight;
 	updateCanvasLocation();
-	context = canvas.getContext("2d");
+	ctx = canvas.getContext("2d");
 	
 	// Prepare hidden area
 	hidden = document.getElementById("hidden");
@@ -204,7 +204,7 @@ function timerTick () {
 	}
 	
 	// Invalidate
-	context.clearRect(0, 0, canvas.width, canvas.height);
+	ctx.clearRect(0, 0, canvas.width, canvas.height);
 	
 	padX = padY = 0;
 	

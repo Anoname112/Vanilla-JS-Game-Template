@@ -33,48 +33,48 @@ function newImg (path) {
 function drawImage (image, x, y, w, h) {
 	w = (w == null) ? image.width : w;
 	h = (h == null) ? image.height : h;
-	context.drawImage(image, x, y, w, h);
+	ctx.drawImage(image, x, y, w, h);
 }
 
 function drawLifeBeing(image, position, rotation) {
 	var centerX = position.X + image.width / 2;
 	var centerY = position.Y + image.height / 2;
 	
-	context.save();
-	context.translate(centerX, centerY);
-	context.rotate(degreeToRadian(rotation));
-	context.translate(-centerX, -centerY);
+	ctx.save();
+	ctx.translate(centerX, centerY);
+	ctx.rotate(degreeToRadian(rotation));
+	ctx.translate(-centerX, -centerY);
 	drawImage(image, position.X, position.Y);
-	context.restore();
+	ctx.restore();
 }
 
 function fillRect (x, y, w, h, s) {
-	context.fillStyle = s == null ? "#000" : s;
-	context.fillRect(x, y, w, h);
+	ctx.fillStyle = s == null ? "#000" : s;
+	ctx.fillRect(x, y, w, h);
 }
 
 function drawLine (x1, y1, x2, y2, s) {
-	context.strokeStyle = (s == null) ? "#000" : s;
-	context.beginPath();
-	context.moveTo(x1, y1);
-	context.lineTo(x2, y2);
-	context.closePath();
-	context.stroke();
+	ctx.strokeStyle = (s == null) ? "#000" : s;
+	ctx.beginPath();
+	ctx.moveTo(x1, y1);
+	ctx.lineTo(x2, y2);
+	ctx.closePath();
+	ctx.stroke();
 }
 
 function drawRect (x, y, w, h, s) {
-	context.strokeStyle = (s == null) ? "#000" : s;
-	context.lineWidth = scaling;
-	context.beginPath();
-	context.strokeRect(x, y, w, h);
-	context.closePath();
-	context.stroke();
+	ctx.strokeStyle = (s == null) ? "#000" : s;
+	ctx.lineWidth = scaling;
+	ctx.beginPath();
+	ctx.strokeRect(x, y, w, h);
+	ctx.closePath();
+	ctx.stroke();
 }
 
 function drawMessage (msg, x, y) {
-	context.font = msgFont;
-	context.fillStyle = msgTextColor;
-	context.fillText(msg, x, y + 12);
+	ctx.font = msgFont;
+	ctx.fillStyle = msgTextColor;
+	ctx.fillText(msg, x, y + 12);
 }
 
 function floor (value, floor) {
