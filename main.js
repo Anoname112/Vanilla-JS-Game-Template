@@ -47,7 +47,7 @@ function initDocument () {
 	document.body.style.font = bodyFont;
 	
 	// Prepare canvas
-	canvas = document.getElementById("myCanvas");
+	canvas = getElement("myCanvas");
 	canvas.style.position = canvasPosition;
 	canvas.style.borderRadius = canvasBorderRadius;
 	canvas.width = window.innerWidth;
@@ -56,12 +56,12 @@ function initDocument () {
 	ctx = canvas.getContext("2d");
 	
 	// Prepare hidden area
-	hidden = document.getElementById("hidden");
+	hidden = getElement("hidden");
 	hidden.style.visibility = "hidden";
 	
 	// Prepare audio
 	hidden.innerHTML += "<audio id=\"bgm\"><source src=\"" + bgmPath + "\" /></audio>";
-	bgm = document.getElementById("bgm");
+	bgm = getElement("bgm");
 	bgm.style.visibility = audioVisibility;
 	bgm.addEventListener('ended', function() {
 		this.currentTime = 0;
@@ -69,7 +69,7 @@ function initDocument () {
 	}, false);
 	
 	// Prepare controls
-	fireSvg = document.getElementById("fireSvg");
+	fireSvg = getElement("fireSvg");
 	fireSvg.addEventListener("touchstart", fireTouchStart, false);
 	fireSvg.addEventListener("touchend", fireTouchEnd, false);
 	fireSvg.onmousedown = fireTouchStart;
