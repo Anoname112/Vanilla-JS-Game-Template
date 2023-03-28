@@ -40,7 +40,7 @@ function drawImage (image, x, y, w, h) {
 	ctx.drawImage(image, x, y, w, h);
 }
 
-function drawLifeBeing(image, position, rotation) {
+function drawLifeBeing (image, position, rotation) {
 	var centerX = position.X + image.width / 2;
 	var centerY = position.Y + image.height / 2;
 	
