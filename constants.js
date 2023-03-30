@@ -7,6 +7,7 @@ const gravity = 10;
 const upVec2 = new Vec2(0, -1);
 
 // Body
+const bodyMargin = "0";
 const bodyBackColor = "#1F1F1F";
 const bodyFontColor = "#FFFFFF";
 const bodyFont = "15px Segoe UI";
