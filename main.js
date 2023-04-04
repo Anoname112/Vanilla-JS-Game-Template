@@ -64,7 +64,7 @@ function initDocument () {
 	hidden.innerHTML += "<audio id=\"bgm\"><source src=\"" + bgmPath + "\" /></audio>";
 	bgm = getElement("bgm");
 	bgm.style.visibility = audioVisibility;
-	bgm.addEventListener('ended', function() {
+	bgm.addEventListener('ended', function () {
 		this.currentTime = 0;
 		this.play();
 	}, false);
