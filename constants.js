@@ -18,10 +18,13 @@ const canvasPosition = "fixed";
 
 // Message
 const msgPad = 15;
-const msgFontColor = "#000";
+const msgFontColor = "#FFFFFF";
 const msgFontSize = 15 * scaling;
 const msgSpacing = (isMobile || isPortrait) ? 5 + scaling * 5 : 4 + scaling * 6;
 const msgFont = msgFontSize + "px Consolas";
+const msgBackPadding = 5;
+const msgBackRadius = 5;
+const msgBackColor = "#222222";
 
 // Control
 const controlPadding = 10;
