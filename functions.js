@@ -75,11 +75,24 @@ function drawRect (x, y, w, h, s) {
 	ctx.stroke();
 }
 
-function drawMessage (msg, x, y, align) {
+function drawMessage (msg, x, y, w, h, align) {
+	var backX = x - (w / 2) - msgBackPadding;
+	var backY = y - (h / 2) - msgBackPadding;
+	var backW = w + (msgBackPadding * 2);
+	var backH = h + (msgBackPadding * 2);
+	
+	ctx.strokeStyle = msgBackColor;
+	ctx.fillStyle = msgBackColor;
+	ctx.beginPath();
+	ctx.roundRect(backX, backY, backW, backH, msgBackRadius);
+	ctx.stroke();
+	ctx.fill();
+	
+	ctx.textBaseline = "middle";
 	ctx.textAlign = (align == null) ? "start" : align;
 	ctx.font = msgFont;
-	ctx.fillStyle = msgTextColor;
-	ctx.fillText(msg, x, y + 12);
+	ctx.fillStyle = msgFontColor;
+	ctx.fillText(msg, x, y);
 	ctx.textAlign = "start";
 }
 
