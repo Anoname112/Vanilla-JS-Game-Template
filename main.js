@@ -14,6 +14,7 @@ var player;
 var gState;
 var level;
 var message;
+var intervalId;
 
 window.onload = function () {
 	window.onkeydown = keyDown;
@@ -36,7 +37,7 @@ window.onload = function () {
 		for (var i = 0; i < images.length; i++) {
 			if (!images[i].complete) contentLoaded = false;
 		}
-		if (contentLoaded) setInterval(timerTick, interval);
+		if (contentLoaded) intervalId = setInterval(timerTick, interval);
 	}
 }
 
