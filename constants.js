@@ -60,8 +60,8 @@ const playerSpeed = 5;  // Must be smaller than 15
 const stepCounter = 15;
 
 // Heart
-const animSpeed = 0.1;
-const animMax = 3;
+const heartAnimSpeed = 0.1;
+const heartAnimMax = 3;
 
 // Enemy
 const enemyHealth = 20;
