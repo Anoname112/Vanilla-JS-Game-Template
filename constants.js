@@ -75,8 +75,8 @@ const platColor = "#F9A965";    // SandyBrown
 
 // HP bar
 const hpBarWidth = 100;
-//const hpBarBack = "#F0F0F0";
-//const hpBarGreen = "#00FF00";
-//const hpBarYellow = "#FFFF00";
-//const hpBarRed = "#FF0000";
+const hpBarBack = "#F0F0F0";
+const hpBarGreen = "#00FF00";
+const hpBarYellow = "#FFFF00";
+const hpBarRed = "#FF0000";
 */
