@@ -76,8 +76,8 @@ function initDocument () {
 	fireSvg.style.position = "fixed";
 	fireSvg.style.bottom = controlPadding;
 	fireSvg.style.left = controlPadding;
-	fireSvg.children[0].style.width = controlSize;
-	fireSvg.children[0].style.height = controlSize;
+	fireSvg.style.width = controlSize;
+	fireSvg.style.height = controlSize;
 }
 
 function initGame () {
