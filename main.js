@@ -13,14 +13,11 @@ var player;
 var backgrounds;
 
 window.onload = function () {
-	window.onkeydown = keyDown;
-	window.onkeyup = keyUp;
-	window.addEventListener("touchstart", touchStart, false);
-	window.addEventListener("touchend", touchEnd, false);
-	window.onmousedown = touchStart;
-	window.onmouseup = touchEnd;
+	window.oncontextmenu = onContextMenu;
 	window.onresize = updateCanvasLocation;
-	window.onblur = function() {
+	window.onkeydown = onKeyDown;
+	window.onkeyup = onKeyUp;
+	window.onblur = function () {
 		if (gState < 2) pause();
 	};
 	
@@ -46,6 +43,10 @@ function initDocument () {
 	
 	// Prepare canvas
 	canvas = getElement("myCanvas");
+	canvas.addEventListener("touchstart", onMouseDown, false);
+	canvas.addEventListener("touchend", onMouseUp, false);
+	canvas.onmousedown = onMouseDown;
+	canvas.onmouseup = onMouseUp;
 	canvas.style.position = canvasPosition;
 	canvas.style.borderRadius = canvasBorderRadius;
 	canvas.width = window.innerWidth;
@@ -122,34 +123,11 @@ function generateLevel (level) {
 	}
 }
 
-function touchStart (e) {
-	//var controlCanvasX = e.touches[0].pageX;
-	//var controlCanvasY = e.touches[0].pageY;
-	if (gState == 2) {
-		if (level == finalLevel) initGame();
-		else {
-			level++;
-			initLevel();
-		}
-	}
-	if (gState == 3) initLevel();
+function onContextMenu (e) {
+	e.preventDefault();
 }
 
-function touchEnd (e) {
-	if (gState == 0) resume();
-}
-
-function fireTouchStart (e) {
-	if (gState == 1) {
-		
-	}
-}
-
-function fireTouchEnd (e) {
-	console.log('from icons.getbootstrap.com');
-}
-
-function keyDown (e) {
+function onKeyDown (e) {
 	var key = e.keyCode;
 	switch (key) {
 		case 13:	// Enter
@@ -179,7 +157,7 @@ function keyDown (e) {
 	}
 }
 
-function keyUp (e) {
+function onKeyUp (e) {
 	var key = e.keyCode;
 	switch (key) {
 		case 37:	// Left
@@ -195,10 +173,36 @@ function keyUp (e) {
 	}
 }
 
+function onMouseDown (e) {
+	//var controlCanvasX = e.touches[0].pageX;
+	//var controlCanvasY = e.touches[0].pageY;
+	if (gState == 2) {
+		if (level == finalLevel) initGame();
+		else {
+			level++;
+			initLevel();
+		}
+	}
+	if (gState == 3) initLevel();
+}
+
+function onMouseUp (e) {
+	if (gState == 0) resume();
+}
+
+function fireTouchStart (e) {
+	if (gState == 1) {
+		
+	}
+}
+
+function fireTouchEnd (e) {
+	console.log('from icons.getbootstrap.com');
+}
+
 function timerTick () {
 	if (gState == 1) {
 		// Animate
-		
 	}
 	
 	// Invalidate
