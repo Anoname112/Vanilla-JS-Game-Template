@@ -1,20 +1,16 @@
 var canvas;
 var ctx;
 var fireSvg;
-var bgm;
 var hidden;
+var bgm;
 
-var backgrounds;
-var player;
-
-// 0. Paused
-// 1. Playing
-// 2. Win
-// 3. Lose
-var gState;
+var intervalId;
+var gState;		// 0: Paused, 1: Playing, 2: Win, 3: Lose
 var level;
 var message;
-var intervalId;
+
+var player;
+var backgrounds;
 
 window.onload = function () {
 	window.onkeydown = keyDown;
