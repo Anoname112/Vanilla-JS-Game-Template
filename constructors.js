@@ -1,7 +1,23 @@
+function Camera (follow, position, z, speed) {
+	this.Follow = follow;
+	this.Position = position;
+	this.Z = (z == null) ? 1 : z;
+	this.Speed = (speed == null) ? cameraSpeed : speed;
+}
+
 function Background (image, position, z) {
 	this.Image = image;
 	this.Position = position;
 	this.Z = (z == null) ? backgroundZIndex : z;
+}
+
+function Heart (image, position, animSpeed, animMax) {
+	this.Image = image;
+	this.Position = position;
+	this.AnimSpeed = (animSpeed == null) ? heartAnimSpeed : animSpeed;
+	this.AnimMax = (animMax == null) ? heartAnimMax : animMax;
+	this.AnimStep = 0;
+	this.AnimDirection = 1;
 }
 
 function LifeBeing (health, attack, range, attackDelay, missileSpeed, missileImage, sightRange, speed, stepCounter, walkImages, attackImages, party, position, rotation) {
