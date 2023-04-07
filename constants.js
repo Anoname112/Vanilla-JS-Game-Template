@@ -24,6 +24,7 @@ const msgSpacing = (isMobile || isPortrait) ? 5 + scaling * 5 : 4 + scaling * 6;
 const msgFont = msgFontSize + "px Consolas";
 const msgBackPadding = 5;
 const msgBackRadius = 5;
+const msgBackWidth = 100;
 const msgBackColor = "#222222";
 
 // Control
